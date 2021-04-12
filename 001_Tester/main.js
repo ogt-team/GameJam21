@@ -158,7 +158,7 @@ let player = {
 
         // Draw UI
         context.font = "12px Arial";
-        context.fillText("move - wsda, shoot - space", 10, 12);
+        context.fillText("move - wasd, shoot - space", 10, 12);
         context.fillText("Player Kills: " + player.kills, 10, 26);
         context.fillText("Alive Monsters: " + monsters.filter(m => m.alive).length, 10, 40);
 
