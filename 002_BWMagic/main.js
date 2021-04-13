@@ -24,10 +24,10 @@ let touches = [],
         let threshold = 50;
 
         let lineTest = [
-            [500, 500],
-            [550, 550],
-            [700, 500],
-            [400, 300]
+            [50, 300],
+            [100, 350],
+            [250, 300],
+            [100, 100]
         ];
 
         for (var j = 0; j < lineTest.length;j += 1) {
