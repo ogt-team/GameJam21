@@ -23,3 +23,7 @@ https://github.com/ogt-team/GameJam21/wiki
 ### Sprint-Board
 
 https://github.com/ogt-team/GameJam21/projects/1
+
+### Fragen
+
+https://github.com/ogt-team/GameJam21/discussions
