@@ -26,6 +26,10 @@ https://github.com/ogt-team/GameJam21/wiki
 
 https://github.com/ogt-team/GameJam21/projects/1
 
+### TODOS
+
+https://github.com/ogt-team/GameJam21/issues
+
 ### Fragen
 
 https://github.com/ogt-team/GameJam21/discussions
