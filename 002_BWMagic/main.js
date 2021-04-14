@@ -47,7 +47,7 @@ let touches = [],
         if (plugins.input.touches.length == 0 && touches.length > 0) {
             try {
                 shape = touches;
-                shape.name = ":P";
+                shape.name = "Spell";
                 shape.isInShapeTest = true;
 
                 var nearTestPoins = [];
@@ -136,6 +136,7 @@ let touches = [],
 
 engine.start()
 
+// https://stackoverflow.com/a/29915728
 function inside(point, vs) {
     // ray-casting algorithm based on
     // https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html/pnpoly.html
@@ -262,6 +263,7 @@ function createShapeForLineTest (threshold, line, context, width, height, stepTi
     return shape;
 }
 
+//https://stackoverflow.com/a/42159152
 function getAngle (v1, v2, v3) {
     var dAx = v2[0] - v1[0] ;
     var dAy = v2[1] - v1[1] ;
@@ -312,6 +314,7 @@ function drawLine (context, width, height,line, color) {
     context.stroke();
 }
 
+// https://stackoverflow.com/a/28112459
 function rotateVector(vec, ang)
 {
     ang = -ang * (Math.PI/180);
