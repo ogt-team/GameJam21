@@ -1,4 +1,4 @@
-var spellRecognition = {
+var SpellRecognitionHelper = {
 
     nearAllPoints: function (gesture, spell, threshold){
         var nearTestPoins = [];
@@ -38,7 +38,7 @@ var spellRecognition = {
 
             let hasRectangle = false;
             for (var k = 0; k < boundingBoxes.length;k += 1) {
-                if (ogt_geometry.inside(p, boundingBoxes[k])){
+                if (Geometry.inside(p, boundingBoxes[k])){
                     hasRectangle = true;
                 }
             }
@@ -65,11 +65,11 @@ var spellRecognition = {
                 p[1] - p_n[1]
             ];
 
-            let start_left_dir = ogt_geometry.resizeVector(ogt_geometry.rotateVector(dir, -135), threshold);
-            let start_right_dir = ogt_geometry.resizeVector(ogt_geometry.rotateVector(dir, -225), threshold);
+            let start_left_dir = Geometry.resizeVector(Geometry.rotateVector(dir, -135), threshold);
+            let start_right_dir = Geometry.resizeVector(Geometry.rotateVector(dir, -225), threshold);
 
-            let end_left_dir = ogt_geometry.resizeVector(ogt_geometry.rotateVector(dir, -45), threshold);
-            let end_right_dir = ogt_geometry.resizeVector(ogt_geometry.rotateVector(dir, -315), threshold);
+            let end_left_dir = Geometry.resizeVector(Geometry.rotateVector(dir, -45), threshold);
+            let end_right_dir = Geometry.resizeVector(Geometry.rotateVector(dir, -315), threshold);
 
             r.push([
                 p[0] - start_left_dir[0],

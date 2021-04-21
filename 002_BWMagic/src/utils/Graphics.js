@@ -1,5 +1,4 @@
-let ogt_graphics = {
-
+let Graphics = {
 
     drawRectangles: function (line, context, width, height, color) {
         for (var i = 0; i < line.length; i+=1) {

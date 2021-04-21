@@ -1,9 +1,9 @@
 
-function createEngine (config) {
-    let touches = [],
-    engine = cEngine.create({
+function CanvasEngineFactory (config) {
+
+    let engine = cEngine.create({
         autoClear: false,
-        height: 512,
+        height: Settings.canvasHeight,
         plugins: {
             input: cEngine.input.create(),
             activityTracker: cEngine.activityTracker.create({
@@ -15,30 +15,16 @@ function createEngine (config) {
                 aspectRetion: true
             }),
             frameRate: cEngine.frameRate.create({
-                fps: 60
+                fps: Settings.fps
             })
         },
         step: (context, width, height, stepTimeElapsed, plugins) => {
 
             engine.clear();
 
-            if (plugins.input.touches.length == 0 && touches.length > 0) {
-                try {
-                    config.touchEnd(touches);
-                } catch (error) {
-                    console.log(error)
-                }
-                touches = [];
-            }
-
-            plugins.input.touches.forEach(function(touch){
-                touches.push([
-                    touch.x,
-                    touch.y
-                ])
-            })
             try {
-                config.step(context, width, height, stepTimeElapsed, touches);
+                config.update(context, width, height, stepTimeElapsed, plugins);
+                config.draw(context, width, height, stepTimeElapsed, plugins);
             } catch (error) {
                 console.log(error)
             }
