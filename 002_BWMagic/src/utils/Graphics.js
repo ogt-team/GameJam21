@@ -1,5 +1,15 @@
 let Graphics = {
 
+    //https://stackoverflow.com/a/1484514
+    getRandomColor: function () {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    },
+
     drawRectangles: function (line, context, width, height, color) {
         for (var i = 0; i < line.length; i+=1) {
             context.fillStyle = color

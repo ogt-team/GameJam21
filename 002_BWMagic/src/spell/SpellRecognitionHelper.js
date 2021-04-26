@@ -12,10 +12,7 @@ var SpellRecognitionHelper = {
             var p = gesture[i];
 
             for (var j = 0; j < spell.length;j += 1) {
-                var pt = spell[j];
-                var r = threshold;
-                var isInside=Math.pow(p[0] - pt[0], 2) + Math.pow(p[1] - pt[1], 2) < (r*r);
-                if (isInside){
+                if (Geometry.isInCircle(p, spell[j], threshold)){
                     nearTestPoins[j] = true;
                 }
             }

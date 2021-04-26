@@ -31,6 +31,18 @@ let Geometry = {
         return angle * (180 / Math.PI);
     },
 
+    // https://stackoverflow.com/a/21484228
+    getAngleBetweenVectors: function (v1, v2) {
+        let angle = Math.atan2(v2[1], v2[0]) - Math.atan2(v1[1], v1[0]);
+        angle = Math.abs((angle * (180 / Math.PI)));
+        if (angle > 180) {
+            return 360 - angle;
+        } else {
+            return angle;
+        }
+
+    },
+
     resizeVector:function (v, newLength) {
         let length = Math.sqrt(v[0]*v[0]+v[1]*v[1]);
         return [
@@ -116,6 +128,19 @@ let Geometry = {
         );
     },
 
+    //https://stackoverflow.com/a/24392281
+    intersects: function (a,b,c,d,p,q,r,s) {
+        var det, gamma, lambda;
+        det = (c - a) * (s - q) - (r - p) * (d - b);
+        if (det === 0) {
+          return false;
+        } else {
+          lambda = ((s - q) * (r - a) + (p - r) * (s - b)) / det;
+          gamma = ((b - d) * (r - a) + (c - a) * (s - b)) / det;
+          return (0 < lambda && lambda < 1) && (0 < gamma && gamma < 1);
+        }
+    },
+
     simplifyPath: function (path) {
 
         var newPath = [];
@@ -142,6 +167,9 @@ let Geometry = {
         newPath.push(path[path.length-1]);
 
         return newPath;
-    }
+    },
 
+    isInCircle: function (p, middle, r) {
+        return Math.pow(middle[0] - p[0], 2) + Math.pow(middle[1] - p[1], 2) < (r*r);
+    }
 };
