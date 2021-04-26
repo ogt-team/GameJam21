@@ -14,7 +14,12 @@ Eine Liste von Spielen mit Links zum zocken.
 
     Rundenbasiertes Magiesystem à la Black&White.
     
-    Stand: Einfache Gestenerkennung - Idee 1 und Problem-Lösung 1 aus dem [Wiki](https://github.com/ogt-team/GameJam21/wiki/002-BWMagic---Gestenerkennung) ist umgesetzt. Nutzer kann vorgegebene Geste nachmalen und das System gibt aus, ob die Geste valide oder nicht valide ist. Mouse und Touch werden unterstützt. 
+    Stand: Einfache Gestenerkennung 
+       - Idee 2
+       - Problem-Lösung 1 
+       - Optimierung 1 + 2 
+       - Pfadnormalisierung
+    aus dem [Wiki](https://github.com/ogt-team/GameJam21/wiki/002-BWMagic---Gestenerkennung) ist umgesetzt. Nutzer kann drei Magiespüche zaubern. Mouse und Touch werden unterstützt. 
 
 ## DEV
 
